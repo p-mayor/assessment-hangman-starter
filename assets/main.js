@@ -38,12 +38,15 @@ submitButton.addEventListener("click", function () {
             count++
         }
         currentWordElement.innerHTML = finalString
+        if(finalString===finalWord){
+            document.body.innerHTML += "<img src='https://media.giphy.com/media/xLsaBMK6Mg8DK/giphy.gif'>"
+        }
     } else {
         guessesRemaining--
         guessCountElement.innerHTML = "guesses left:"+guessesRemaining
-    }
-    if(guessesRemaining===0){
-        alert("lose")
-        submitButton.disabled = true
+        if(guessesRemaining===0){
+            document.body.innerHTML += "<img src='https://media.giphy.com/media/10h8CdMQUWoZ8Y/giphy.gif'>"
+            submitButton.disabled = true
+        }
     }
 })
