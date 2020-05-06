@@ -9,13 +9,15 @@ let guessesRemaining = 5
 
 let finalWord = currentWordElement.innerHTML
 let hiddenChar = "-"
+let guessedLetters = ""
 
 currentWordElement.innerHTML = hiddenChar.repeat(finalWord.length)
 
 submitButton.addEventListener("click", function () {
     let guessedLetter = guessElement.value
-    if(!guessedElement.innerHTML.includes(guessedLetter)){
+    if(!guessedLetters.includes(guessedLetter)){
         guessedElement.innerHTML += guessedLetter
+        guessedLetters += guessedLetter
     } else {
         alert("letter already guessed")
     }
